@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Route, Routes} from "react-router-dom";
-import {Home} from "@mui/icons-material";
+import Home from "../../pages/Home/Home";
+
 
 
 export class MainContent extends Component {
@@ -8,7 +9,9 @@ export class MainContent extends Component {
         return (
             <div className="mx-auto">
                 <Routes>
+                    <Route path="/" Component={Home}></Route>
                     <Route path="/home" Component={Home}></Route>
+
                 </Routes>
             </div>
         );

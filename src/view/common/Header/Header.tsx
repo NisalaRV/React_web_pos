@@ -12,9 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import {NavLink} from "react-router-dom";
 
-const pages = ['Home', 'Customer', 'item','place order','order details'];
+// const pages = ['Home', 'Customer', 'item','place order','order details'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const activeLink = "border-b-2 cursor-pointer";
+const normalLink = "cursor-pointer";
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -39,6 +42,7 @@ function Header() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -56,6 +60,7 @@ function Header() {
                     >
                         LOGO
                     </Typography>
+
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -86,13 +91,55 @@ function Header() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <NavLink
+                                to={"/home"}
+                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                            >
+                                <Typography textAlign="center" pt={1} pr={2} pl={2}>
+                                    Home
+                                </Typography>
+                            </NavLink>
+
+                            <NavLink
+                                to={"/customer"}
+                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                            >
+                                <Typography textAlign="center" pt={1} pr={2} pl={2}>
+                                    Customer
+                                </Typography>
+                            </NavLink>
+
+                            <NavLink
+                                to={"/item"}
+                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                            >
+                                <Typography textAlign="center" pt={1} pr={2} pl={2}>
+                                    Item
+                                </Typography>
+                            </NavLink>
+
+                            <NavLink
+                                to={"/place"}
+                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                            >
+                                <Typography textAlign="center" pt={1} pr={2} pl={2}>
+                                    Place Order
+                                </Typography>
+                            </NavLink>
+
+                            <NavLink
+                                to={"/orderDetail"}
+                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                            >
+                                <Typography textAlign="center" pt={1} pr={2} pl={2}>
+                                    Order Details
+                                </Typography>
+
+                            </NavLink>
                         </Menu>
                     </Box>
+
+
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
@@ -112,16 +159,66 @@ function Header() {
                     >
                         LOGO
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                        <NavLink
+                            to={"/home"}
+                            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                        >
                             <Button
-                                key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: "white", display: "block" }}
                             >
-                                {page}
+                                <h4>Home</h4>
                             </Button>
-                        ))}
+                        </NavLink>
+
+                        <NavLink
+                            to={"/customer"}
+                            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                        >
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: "white", display: "block" }}
+                            >
+                                <h4>Customer</h4>
+                            </Button>
+                        </NavLink>
+
+                        <NavLink
+                            to={"/item"}
+                            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                        >
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: "white", display: "block" }}
+                            >
+                                <h4>Item</h4>
+                            </Button>
+                        </NavLink>
+
+                        <NavLink
+                            to={"/place"}
+                            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                        >
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: "white", display: "block" }}
+                            >
+                                <h4>Place Order</h4>
+                            </Button>
+                        </NavLink>
+
+                        <NavLink
+                            to={"/orderDetail"}
+                            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                        >
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: "white", display: "block" }}
+                            >
+                                <h4>Order Details</h4>
+                            </Button>
+                        </NavLink>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
