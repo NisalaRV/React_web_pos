@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Route, Routes} from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import Customer from "../../pages/Customer/Customer";
+import Item from "../../pages/Item/Item";
 
 
 
@@ -13,6 +14,7 @@ export class MainContent extends Component {
                     <Route path="/" Component={Home}></Route>
                     <Route path="/home" Component={Home}></Route>
                     <Route path="/customer" Component={Customer}></Route>
+                    <Route path="/item" Component={Item}></Route>
                 </Routes>
             </div>
         );

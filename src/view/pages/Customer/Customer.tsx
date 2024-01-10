@@ -48,6 +48,7 @@ export default function Customer() {
     return(
         <>
         < Header/>
+            <Box sx={{ width: "100%", mt: 3 }}>
             <h1>Customer</h1>
             <Grid lg={5}  md={5} sm={10} xs={11} ml={5} >
                 <Box
@@ -194,16 +195,17 @@ export default function Customer() {
                     </Box>
                 </Box>
             </Box>
+            </Grid>
 
-                <Grid container width={900} justifyContent={"center"}>
+                <Grid container width={900} justifyContent={"center"} py={4} >
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 700}}  aria-label="customized table">
                             <TableHead>
                                 <TableRow>
                                     <StyledTableCell>Customer_Id</StyledTableCell>
-                                    <StyledTableCell align="right">Customer Name</StyledTableCell>
-                                    <StyledTableCell align="right">Customer Adress</StyledTableCell>
-                                    <StyledTableCell align="right">Phone</StyledTableCell>
+                                    <StyledTableCell align="center">Customer Name</StyledTableCell>
+                                    <StyledTableCell align="center">Customer Adress</StyledTableCell>
+                                    <StyledTableCell align="center">Phone</StyledTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -212,9 +214,9 @@ export default function Customer() {
                                         <StyledTableCell component="th" scope="row">
                                             {row.Customer_Id}
                                         </StyledTableCell>
-                                        <StyledTableCell align="right">{row.CustomerName}</StyledTableCell>
-                                        <StyledTableCell align="right">{row.CustomerAddress}</StyledTableCell>
-                                        <StyledTableCell align="right">{row.Phone}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.CustomerName}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.CustomerAddress}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.Phone}</StyledTableCell>
 
                                     </StyledTableRow>
                                 ))}
@@ -222,7 +224,8 @@ export default function Customer() {
                         </Table>
                     </TableContainer>
                 </Grid>
-            </Grid>
+
+            </Box>
     </>
     )
 };
