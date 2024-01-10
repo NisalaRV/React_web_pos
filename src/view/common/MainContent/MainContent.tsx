@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Route, Routes} from "react-router-dom";
 import Home from "../../pages/Home/Home";
+import Customer from "../../pages/Customer/Customer";
 
 
 
@@ -11,7 +12,7 @@ export class MainContent extends Component {
                 <Routes>
                     <Route path="/" Component={Home}></Route>
                     <Route path="/home" Component={Home}></Route>
-
+                    <Route path="/customer" Component={Customer}></Route>
                 </Routes>
             </div>
         );
