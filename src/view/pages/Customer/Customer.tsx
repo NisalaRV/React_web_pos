@@ -5,18 +5,20 @@ import {
     TextField,
 } from "@mui/material";
 import Header from "../../common/Header/Header";
+import Button from "@mui/material/Button";
 export default function Customer() {
     return(
         <>
         < Header/>
-            <Grid lg={5} md={5} sm={10} xs={11} py={8} ml={5}>
+            <h1>Customer</h1>
+            <Grid lg={5} md={5} sm={10} xs={11} py={5} ml={5}>
                 <Box
                     sx={{
                         bgcolor: "background.paper",
                         boxShadow: 2,
                         borderRadius: 2,
                         p: 2,
-                        width: "30%",
+                        width: "40%",
                     }}
                 >
                 <Box
@@ -24,7 +26,7 @@ export default function Customer() {
                     action="customer"
                     id="customerForm"
                     sx={{
-                        "& .MuiTextField-root": { width: "80%", m: 2 },
+                        "& .MuiTextField-root": { width: "90%", m: 2 },
                     }}
                     noValidate
                     autoComplete="off"
@@ -86,6 +88,72 @@ export default function Customer() {
                         required
                         size="small"
                     />
+                    <Box
+                        sx={{
+                            color: "#2c3e50",
+                            gap: 2,
+                            mr: 2,
+                            ml: 2,
+                            p: 2,
+                            "& button": { m: 1 },
+                        }}
+                    >
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            id="btnSaveCustomer"
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                            }}
+                        >
+                            Save
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="success"
+                            id="btnUpdateCustomer"
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                            }}
+                        >
+                            Update
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="error"
+                            id="btnDeleteCustomer"
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                            }}
+                        >
+                            Delete
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            id="getAllCustomer"
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                            }}
+                        >
+                            Get All
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="error"
+                            id="clearAllCustomer"
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                            }}
+                        >
+                           Clear All
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
     </Grid>
