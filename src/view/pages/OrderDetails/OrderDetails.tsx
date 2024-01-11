@@ -13,11 +13,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
-const options = ['C00-001', 'C00-002','C00-003'];
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -40,78 +36,24 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function createData(code: string,customerid:string, name: string, qty: number, price: number,) {
-    return { code,customerid, name, qty, price,options };
+    return { code,customerid, name, qty, price, };
 }
 
 const rows = [
-    createData("I00-001", "C00-001","Carrot",100,20),
+    createData("I00-001", "C00-001","Carrot",100,200),
+    createData("I00-002", "C00-002","parsnip",50,50),
+    createData("I00-003", "C00-003","sugar beet",100,120),
+    createData("I00-001", "C00-004","Carrot",100,26),
+    createData("I00-002", "C00-005","parsnip",100,30),
+    createData("I00-004", "C00-006","radish",100,60),
 
 ];
 
-export default function Order(){
-    const [value, setValue] = React.useState<string | null>(options[0]);
-    const [inputValue, setInputValue] = React.useState('');
+export default function OrderDetails(){
     return(
         <>
             <Header/>
-            <h1>Place Order</h1>
-
-            <Grid ml={5} >
-                <br/>
-                <Autocomplete
-                    value={value}
-                    onChange={(event: any, newValue: string | null) => {
-                        setValue(newValue);
-                    }}
-                    inputValue={inputValue}
-                    onInputChange={(event, newInputValue) => {
-                        setInputValue(newInputValue);
-                    }}
-                    id="controllable-states-demo"
-                    options={options}
-                    sx={{width: 300}}
-                    renderInput={(params) => <TextField {...params} label="Customer ID"/>}
-                />
-
-            </Grid>
-                <Grid py={3}  ml={10} >
-                    <Box
-                        component="form"
-                        sx={{
-                            '& .MuiTextField-root': { m: 1, width: '25ch' },
-                        }}
-                        noValidate
-                        autoComplete="off"
-                    >
-
-                        <TextField label="Name"
-                        />
-
-                        <TextField label="Address"
-                        />
-
-                        <TextField label="Salary"
-                        />
-
-                        <TextField label="Item Name"
-                        />
-
-                        <TextField label="Qty On hand"
-                        />
-
-                        <TextField label="Price"
-                        />
-
-                    </Box>
-
-                </Grid>
-            <Grid ml={156}>
-                <Button variant="contained" color="primary">
-                    Add To Cart
-                </Button>
-
-            </Grid>
-
+            <h1>Order Details</h1>
             <Grid container width={900} justifyContent={"center"} py={4} ml={20} >
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 700}}  aria-label="customized table">
@@ -119,7 +61,7 @@ export default function Order(){
                             <TableRow>
                                 <StyledTableCell> Item Code </StyledTableCell>
                                 <StyledTableCell align="center">Order ID</StyledTableCell>
-                                <StyledTableCell align="center">Customer Id</StyledTableCell>
+                                <StyledTableCell align="center">Customer ID</StyledTableCell>
                                 <StyledTableCell align="center">Item Name</StyledTableCell>
                                 <StyledTableCell align="center">Item Price&nbsp;(Rs)</StyledTableCell>
                                 <StyledTableCell align="center">Item QTY</StyledTableCell>
@@ -138,7 +80,6 @@ export default function Order(){
                                     <StyledTableCell align="center">{row.qty}</StyledTableCell>
                                     <StyledTableCell align="center">{row.price}</StyledTableCell>
                                     <StyledTableCell align="center">
-                                        <button >Edit</button>
                                         <button>Delete</button>
                                     </StyledTableCell>
                                 </StyledTableRow>
@@ -147,27 +88,6 @@ export default function Order(){
                     </Table>
                 </TableContainer>
             </Grid>
-            <Grid ml={10}>
-
-                <TextField label="Total"
-                />
-            </Grid>
-
-            <Grid ml={156}>
-                <Button variant="contained" color="success">
-                    Place Order
-                </Button>
-
-            </Grid>
-            <Grid ml={156} py={5}>
-                <Button variant="contained" color="error">
-                   Cancle
-                </Button>
-
-            </Grid>
-
-
-
 
         </>
     )

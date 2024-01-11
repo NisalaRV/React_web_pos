@@ -4,6 +4,7 @@ import Home from "../../pages/Home/Home";
 import Customer from "../../pages/Customer/Customer";
 import Item from "../../pages/Item/Item";
 import Order from "../../pages/Order/Order";
+import OrderDetails from "../../pages/OrderDetails/OrderDetails";
 
 
 
@@ -17,6 +18,7 @@ export class MainContent extends Component {
                     <Route path="/customer" Component={Customer}></Route>
                     <Route path="/item" Component={Item}></Route>
                     <Route path="/place" Component={Order}></Route>
+                    <Route path="/orderDetail" Component={OrderDetails}></Route>
                 </Routes>
             </div>
         );

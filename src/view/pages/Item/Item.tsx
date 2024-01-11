@@ -192,7 +192,7 @@ export default function Item() {
                     </Box>
                 </Grid>
 
-                <Grid container width={900} justifyContent={"center"} py={4} >
+                <Grid container width={900} justifyContent={"center"} py={4}  ml={10}>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 700}}  aria-label="customized table">
                             <TableHead>

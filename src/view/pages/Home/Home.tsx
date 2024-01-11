@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
          <Header/>
-            <h1>awa man</h1>
+            <h1> Home</h1>
 
             <Container sx={{ py:4 }} maxWidth="md">
                 {/* End hero unit */}
@@ -57,6 +57,34 @@ export default function Home() {
                                 </Typography>
                                 <Typography>
                                     Count :
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid xs={12} sm={6} md={3} >
+                        <Card
+                            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                        >
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    Pending
+                                </Typography>
+                                <Typography>
+                                    Count :
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid xs={12} sm={6} md={3} >
+                        <Card
+                            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                        >
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    Stock
+                                </Typography>
+                                <Typography>
+                                    Details :
                                 </Typography>
                             </CardContent>
                         </Card>
